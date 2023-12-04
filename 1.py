@@ -1,4 +1,4 @@
-puzzle_text = """
+puzzleText = """
 14gxqgqsqqbxfpxnbccjc33eight
 eight2sevenkl
 mrjstg5onetwoeightgcczx8vgrgl
@@ -1000,4 +1000,10 @@ nftdkmtmcz4
 nlnineeightmndkqz8nineonenrqm
 nrhdxfsqvxcbcghf35eightthreeseven5
 """
+count = 0
 
+for word in puzzleText.split('\n'):
+    digits = [x for x in word if x.isdigit()]
+    count += int(digits[0] * 2) if len(digits) == 1 else int(str(digits[0]) + str(digits[-1])) if len(digits) > 1 else 0
+
+print(count)
